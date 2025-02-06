@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owner Login</title>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="Owner_login.php" method="POST" class="sign-in-form">
+          <h2 class="title">Owner Login</h2>
+          
+          <!-- Display Error Message -->
+          <?php 
+          session_start();
+          if (isset($_SESSION['error_message'])): ?>
+            <p style="color: red; text-align: center;"><?php echo $_SESSION['error_message']; ?></p>
+            <?php unset($_SESSION['error_message']); // Clear message after displaying ?>
+          <?php endif; ?>
+
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Shop Name" name="shopname" required />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password" required />
+          </div>
+          <input type="submit" value="Login" class="btn solid" />
+        </form>
+      </div>
+    </div>
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>Welcome Shop Owner!</h3>
+          <p>Login to manage your Print Jobs.</p>
+        </div>
+        <img src="./img/owner.png" class="image" alt="Owner">
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

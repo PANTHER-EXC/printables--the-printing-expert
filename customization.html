@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customization - PRINTABLES</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <section id="customization" class="get-started">
+                <div class="text-center">
+                    <h1>Customize Your Print Job</h1>
+                    <div class="heading-line"></div>
+                    <p>Tailor your print job to your exact specifications with our diverse printing options and customization features.</p>
+                </div>
+                <div class="row">
+                    <div class="column gradient">
+                        <div class="cta-info">
+                            <h4>Customization Options</h4>
+                            <p>Choose from a variety of options to meet your printing needs.</p>
+                            <h3>Available Options:</h3>
+                            <ul class="cta-info__list">
+                                <li>Single-sided or double-sided printing</li>
+                                <li>Color or black-and-white printing</li>
+                                <li>Various paper sizes and materials</li>
+                                <li>Additional services like spiral binding</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form">
+                            <h4>Customize and Get Cost Estimate</h4>
+                            <form action="customization.php" method="post" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <label for="print_type">Print Type:</label>
+                                    <select name="print_type" id="print_type">
+                                        <option value="single_sided">Single-Sided</option>
+                                        <option value="double_sided">Double-Sided</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="color_option">Color Option:</label>
+                                    <select name="color_option" id="color_option">
+                                        <option value="color">Color</option>
+                                        <option value="black_and_white">Black & White</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paper_size">Paper Size:</label>
+                                    <select name="paper_size" id="paper_size">
+                                        <option value="A4">A4</option>
+                                        <option value="A3">A3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paper_material">Paper Material:</label>
+                                    <select name="paper_material" id="paper_material">
+                                        <option value="standard">Standard</option>
+                                        <option value="premium">Premium</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="additional_services">Additional Services:</label>
+                                    <select name="additional_services" id="additional_services">
+                                        <option value="none">None</option>
+                                        <option value="spiral_binding">Spiral Binding</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity">Quantity:</label>
+                                    <input type="number" id="quantity" name="quantity" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery_address">Delivery Address:</label>
+                                    <textarea id="delivery_address" name="delivery_address" rows="2" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shop_selector">Select Shop:</label>
+                                    <select name="shop_selector" id="shop_selector" class="form-control">
+                                        <option value="shop_kattappana">Kattappana</option>
+                                        <option value="shop_nedumkandam">Nedumkandam</option>
+                                        <option value="shop_kumily">Kumily</option>
+                                        <option value="shop_thodupuzha">Thodupuzha</option>
+                                        <option value="shop_adimali">Adimali</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="number_of_pages">Number of Pages:</label>
+                                    <input type="number" id="number_of_pages" name="number_of_pages" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="file_upload">Upload File:</label>
+                                    <input type="file" id="file_upload" name="file_upload" required>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="submit-button">Get Cost Estimation</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="cost_estimate" class="mt-3 text-center">
+                <!-- Cost estimate will be displayed here -->
+            </div>
+        </div>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .text-center {
+            text-align: center;
+        }
+        .heading-line {
+            width: 100px;
+            height: 4px;
+            background-color: #333;
+            margin: 10px auto;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .column {
+            width: 48%;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gradient {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+        }
+        .cta-info h4, .form h4 {
+            margin-bottom: 20px;
+        }
+        .cta-info__list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .cta-info__list li {
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group select, .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</body>
+</html>
